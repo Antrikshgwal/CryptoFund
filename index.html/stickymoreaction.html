@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky more Action</title>
+    <style>
+        .section1{
+        display: flex;
+        position: relative;
+        /* flex-direction: column; */
+    }
+    .description{
+        /* border: 2px solid red; */
+        margin: 25px 50px 1px 115px;
+        height: 60vh;
+        width: 50vw;
+        font-size: larger;
+        position: relative;
+    
+    }
+    .description p {
+        margin-top: 40px;
+        line-height: 27px;
+    }
+    .donbox{
+    
+        top: 500px;
+        /* display: inline-block;      */
+        
+        margin: 10px 25px;
+        font-size: larger;
+        /* float: right; */
+       
+        top: 0;
+        float: right;
+        position: sticky;
+        margin-top: 10px;
+        margin-right: 10px;
+        
+        
+    }
+    .scrollable-list {
+        position: sticky;
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow: hidden;
+      transition: height 0.3s ease; /* Add smooth transition effect */
+      
+      
+      top: 0; /* Adjust this value based on your design */
+      z-index: 100;
+    }
+    
+    /* Apply styles to list items (optional) */
+    .scrollable-list-item {
+        margin: 25px 15px;
+        /* height: 20px; */
+      margin-bottom: 8px;
+      padding: 8px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    /* Additional content initially hidden */
+    .additional-content {
+      display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="section1">
+        <div class="description">
+            
+<h2>Description</h2>
+<p  style="margin:35px 1px 25px 1px ;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum obcaecati magnam debitis consequuntur! Vitae, suscipit unde veritatis odio temporibus deserunt mollitia repellendus alorem34 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolorem libero, doloremque quaerat eligendi exercitationem iusto asperiores laudantium. Aspernatur excepturi temporibus eos enim non laboriosam maiores blanditiis vel omnis libero, deleniti maxime autem ut?lorem45. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsum aperiam ipsa rerum, dolor cumque iure sapiente eligendi quia nobis corrupti rem doloribus, quod veniam, tenetur officia. Saepe ipsam soluta nulla cumque delectus porro?
+</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur veniam quis eum sit! Nam, nostrum repudiandae. Odio neque beatae excepturi a possimus sapiente cumque fuga exercitationem modi aperiam fugiat totam eius error ex nisi, doloribus veniam vitae magnam uam! Mollitia cum laudantium quos alias magnam incidunt nemo, sunt voluptatibus voluptates dolor eligendi atque id dicta inventore accusantium vero distinct</p>
+<img src="images/cards/pexels-photo-3691813.jpeg" style=" width: 695px;
+height: 425px;
+border-radius: 40px;
+margin-top: 25px; margin-left: 35px; z-index: -5;"  alt="">
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur veniam quis eum sit! Nam, nostrum repudiandae. Odio neque beatae excepturi a possimus sapiente cumque fuga exercitationem modi aperiam fugiat totam eius error ex nisi, doloribus veniam vitae magnam natus magni quia assumenda, sequi illum cupiditate? Asperiores in beatae rem facilis doloribus blanditiis numquam ducimus qui quo non praesentium, labore iste atque natus quis ullam porro minima, eos corrupti? Adipisci dolorem saepe temporibus consequatur sint. Debitis quis, molestias, eos rem architecto illum aut fugit, a eveniet exercitationem accusamus explicabo aspernatur error. Enim perferendis necessitatibus neque sed quaerat. Eveniet expedita aliquid quam tempora magni sint, fuga animi quia adipisci aut saepe repudiandae enim soluta sapiente. Vero, perferendis aliquam! Mollitia cum laudantium quos alias magnam incidunt nemo, sunt voluptatibus voluptates dolor eligendi atque id dicta inventore accusantium vero distinct</p>
+
+
+
+   </div>
+
+
+<div class="moreaction">
+   <div class="donbox">
+    <h2 style="margin: 16px 10px 30px 10px;">More Action</h2>
+    <div class="scrollable-list">
+        <!-- List of elements -->
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Track Your Donation
+          <div class="additional-content">Additional content for Item 1</div>
+        </div>
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Pledge
+          <div class="additional-content">Additional content for Item 2</div>
+        </div>
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Campaign Status 
+          <div class="additional-content">Additional content for Item 3</div>
+        </div>
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Smart Contract 
+          <div class="additional-content">Additional content for Item 3</div>
+        </div>
+        <!-- Add more items as needed -->
+    </div> 
+</div>
+</div>
+</div>
+    <script>
+        
+        function toggleContent(element) {
+      var content = element.querySelector('.additional-content');
+      var listItem = element;
+
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        listItem.style.maxHeight = listItem.scrollHeight + 'px';
+      } else {
+        content.style.display = 'none';
+        listItem.style.maxHeight = null;
+      }
+    }
+     // JavaScript function to toggle additional content and adjust container height
+     function toggleContent(element) {
+      var content = element.querySelector('.additional-content');
+      var mainBox = document.getElementById('mainBox');
+
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        mainBox.style.height = mainBox.scrollHeight + 'px';
+      } else {
+        content.style.display = 'none';
+        mainBox.style.height = mainBox.scrollHeight - element.scrollHeight + 'px';
+      }
+    }
+    </script>
+    
+</body>
+</html>

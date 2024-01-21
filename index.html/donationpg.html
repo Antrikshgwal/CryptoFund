@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contribute</title>
+    <!-- Include MetaMask script (if not included automatically) -->
+<script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider"></script>
+
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #success-message {
+            color: green;
+            margin-top: 20px;
+            font-weight: bold;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CryptoFund</h1>
+    </header>
+    
+    <main>
+        <section id="project-details">
+            <h2>Support Campaign</h2>
+            <p>Campaign Id : 56</p>
+            <p>Goal: $10,000</p>
+        </section>
+
+        <section id="donation-form">
+            <h2>Make a Donation</h2>
+            <form id="donation-form">
+                <label for="amount">Amount ($):</label>
+                <input type="number" step="0.01" id="amount" required>
+
+                <button type="button" onclick="contribute()">Contribute</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CryptoFund</p>
+    </footer>
+  
+
+    <script src="web3.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+    function contribute(){
+        alert("Create a Metamask Account to proceed")
+    }
+    </script>
+
+    
+</body>
+</html>

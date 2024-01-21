@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theka Coffee - India's Best Coffee</title>
+   
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .navbar{
+     /* height: 100vh; */
+     /* flex-direction: column; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: rgba(0, 0, 0, 1) url(images/bgcanva.png);
+            background-size: cover;
+            background-blend-mode: darken;
+            /* position: fixed; */
+            /* float: right; */
+            /* margin: 10px 56px; */
+            top: 0;
+            z-index: 1;
+          
+        }
+      
+
+        .nav-list{
+            width: 100vw;
+            /* background-color:black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10%;
+            margin: 5px 25px;
+            /* background: rgba(0,0,0,.7); */
+            /* position: fixed; */
+            
+            
+        }
+        .nav-list li{
+            list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nav-list li a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;}
+    .nav-list li a:hover{
+        color: grey;
+    }
+    .logo{
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    /* border: 2px solid black; */
+    width: 200px;
+    height: 65px;
+    box-sizing: border-box;
+    /* align-items: center; */
+    /* background: #000; */
+}
+.logo img{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+#search{
+        /* border: 2px solid black; */
+        border-radius: 10px;
+    }
+    .background1{
+        background: rgba(0, 0, 0, 0.7) ;
+        background-size: cover;
+        background-blend-mode: darken;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin: 15px 10px 10px 10px ; */
+        /* border-radius: 45px; */
+        
+
+    }
+    .mainimg img{
+        width: 695px;
+        height: 425px;
+        border-radius: 40px;
+        margin-bottom: 25px;
+    }
+    .container2{
+    /* margin: 120px ; */
+    margin-top: 25px;
+    margin-left: 120px;
+    margin-bottom: 25px;
+    display:flex ;
+    }
+    .introtext{
+        margin: -24px 10px;
+        margin-right: 150px;
+        padding: 10px 10px;
+        height: 100px;
+        display: flex;
+        flex-direction:column;
+    }
+    .introtext h1{
+        margin: 15px 20px;
+    }
+    .introtext h3{
+        margin: 10px 20px;
+        
+    }
+    .introtext p{
+        margin: 10px 20px;
+        /* text-align: center; */
+        line-height: 23px;
+        font-weight: 10px;
+        font-size: large;
+        float: left;
+
+    }
+    
+    .progress-container {
+      width: 450px;
+      background-color: #ddd;
+      border-radius: 15px;
+      height: 15px;
+      margin-left: 15px;
+      
+      /* overflow: hidden; */
+    }
+    
+    .progress-bar {
+        /* margin-left: 12px; */
+        border-radius: 15px;
+      width: 68%; /* Adjust this value to change the progress */
+      height: 15px;
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      line-height: 15px;
+      
+    }
+    .authinfo{
+margin: 20px 20px;
+display: flex;
+/* flex-direction: column; */
+    }
+    .authinfo img{
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    margin-bottom: 10px;
+    }
+    .authinfo p{
+        margin: 15px 15px;
+        line-height: 27px;
+        font-size: larger;
+    }
+    .btn{
+        margin: 1px 20px;
+        /* color: black; */
+        /* background:green; */
+height: 35px;
+        width: 150px;
+  
+    }
+    .section1{
+        display: flex;
+        /* flex-direction: column; */
+    }
+    .description{
+        /* border: 2px solid red; */
+        margin: 25px 50px 1px 115px;
+        /* height: 60vh; */
+        width: 50vw;
+        font-size: larger;
+        position: relative;
+    
+    }
+    .description p {
+        margin-top: 10px;
+        line-height: 27px;
+    }
+    .donbox{
+    
+        top: 50px;
+        display: inline-block;     
+        margin: 10px 25px;
+        font-size: larger;
+        /* float: right; */
+        right: 0;
+        bottom: 0;
+        top: 0;
+        /* float: right; */
+        position: sticky;
+        margin-top: 10px;
+        margin-right: 10px;
+    
+
+    }
+    .scrollable-list {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow: hidden;
+      transition: height 0.3s ease; /* Add smooth transition effect */
+      
+      
+      top: 0; /* Adjust this value based on your design */
+      z-index: 100;
+    }
+    
+    /* Apply styles to list items (optional) */
+    .scrollable-list-item {
+        margin: 25px 15px;
+        /* height: 20px; */
+      margin-bottom: 8px;
+      padding: 8px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    /* Additional content initially hidden */
+    .additional-content {
+      display: none;
+    }
+    
+    
+    .footer{
+    display: flex;
+    padding: 25px 25px;
+    background-color: #333;
+}
+.footer ul {
+    padding: 10px;
+    text-decoration: none;
+}
+
+.footer ul li  {
+    list-style-type: none;
+    padding: 10px 10px ;
+    font-size: 20px;
+    text-decoration-line: none !important;
+} 
+.ful1 li a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-icons li {
+    margin: 0 10px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #55acee; /* Change to the color of the social media platform */
+  }
+  .btn2{
+    margin: 10px 8px;
+    height: 35px;
+    width: 185px;
+    margin: 25px 185px;
+    font-size: 15px;
+
+  }
+.tags{
+    margin: 10px 100px;
+}
+.tags ul {
+    margin: 10px 10px;
+    display: flex;
+ }
+ .tags ul li{
+    font-size: large;
+    margin: 10px 20px;
+    list-style: none;
+ }
+ .tags ul li span{
+    background-color: #dbae61;
+ }
+
+ 
+    </style>
+</head>
+<body>
+   <nav class="navbar background1">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="campaigns">Campaigns</a></li>
+          <li><a href="#startcamp">Start a campaigns!</a></li>
+          <div class="logo"><img src="images/WhatsApp Image logobig.jpg" alt=""></div>
+          <li><a href="#about">About</a></li>
+          <li><a href="#difference">How its Different?</a></li>
+          <li><a href=""  target="_blank" id="signinup"><button id="greetings" type="submit" style="border: 2px solid black; width: 120px; color: black; height: 40px;  font-family: 'Baloo Paaji 2', sans-serif; border-radius: 15px; line-height: 12px; background-color: bisque;" ></button></a></li>
+        </ul></nav>
+
+       <div class="container2"> 
+        <div class="mainimg"><img src="images/cards/theka-cropped-1-1657538656.jpg" alt="">
+        <p style="line-height: 25px ; font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae corrupti minima aspernatur sed quam, animi aperiam iste atque nulla sunt dignissimos possimus illum eos distinctio modi vero ipsam repellat fugiat? Quae, facilis reprehenderit. Amet corrupti eveniet, eum eaque facilis autem hic blanditiis deleniti vitae modi aspernatur perspiciatis cumque illo necessitatibus repellendus. Dignissimos quam soluta iure.</p></div>
+        <div class="introtext">
+                <h3>StartUp</h3>
+                <h1>Theka Coffee - India's Best Coffee</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore magnam libero dolore quae, odio error maxime id exercitationem pariatur explicabo aspernatur iusto, animi itaque accusantium eaque eum recusandae accusamus ab nostrum? Exercitationem reiciendis illum asperiores.</p>
+                <hr>
+                <h3>$2,055 USD<span style="margin-left: 220px;">10 Donations</span></h3>
+                <div class="progress-container">
+                    <div class="progress-bar">68%</div>
+                  </div>
+        <h3>68% of $3,000<span style="margin-left: 150px;">60 Days Remaining</span> </h3>
+        
+            
+            <div class="authinfo"><img src="images/cards/food-for-hungry-children-885871_640.jpg" alt="">
+                <p style="font-weight: bolder;">By Antriksh Gwal <br> Ashok Nagar</p>
+                
+                </div>
+                <div><button type="button" class="btn ">Support</button>
+                <button type="button" class="btn ">Follow</button></div>
+            </div>
+        </div> 
+        <hr>
+    
+    <div class="section1">
+        <div class="description">
+            
+<h2>Description</h2>
+<p  style="margin:35px 1px 25px 1px ;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum obcaecati magnam debitis consequuntur! Vitae, suscipit unde veritatis odio temporibus deserunt mollitia repellendus alorem34 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolorem libero, doloremque quaerat eligendi exercitationem iusto asperiores laudantium. Aspernatur excepturi temporibus eos enim non laboriosam maiores blanditiis vel omnis libero, deleniti maxime autem ut?lorem45. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsum aperiam ipsa rerum, dolor cumque iure sapiente eligendi quia nobis corrupti rem doloribus, quod veniam, tenetur officia. Saepe ipsam soluta nulla cumque delectus porro?
+</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur veniam quis eum sit! Nam, nostrum repudiandae. Odio neque beatae excepturi a possimus sapiente cumque fuga exercitationem modi aperiam fugiat totam eius error ex nisi, doloribus veniam vitae magnam uam! Mollitia cum laudantium quos alias magnam incidunt nemo, sunt voluptatibus voluptates dolor eligendi atque id dicta inventore accusantium vero distinct</p>
+<img src="images/cards/theka2.jpg" style=" width: 695px;
+height: 425px;
+border-radius: 40px;
+margin: 25px 25px;" alt="">
+
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis non optio voluptatum quisquam sed illo reprehenderit quasi, distinctio quibusdam similique, voluptate quaerat. Minus error expedita, ducimus ut est voluptate quisquam? Earum est cumque inventore temporibus libero atque doloribus veniam officiis? Voluptas inventore doloremque unde reiciendis enim asperiores assumenda quod non pariatur id? Eveniet explicabo sequi vel repellat harum minima. Reprehenderit earum, aliquid, vero harum, architecto accusantium dignissimos quisquam ad molestias dicta officia deserunt! Dolore quas id facere dolor molestiae doloribus quisquam. Quis beatae dolor necessitatibus expedita eligendi cumque? Ducimus, doloremque asperiores officiis quos beatae id possimus fuga cum exercitationem dolore!</p>
+
+   </div>
+<div class="moreaction">
+   <div class="donbox">
+    <h2 style="margin: 16px 10px 30px 10px;">More Action</h2>
+    <div class="scrollable-list">
+        <!-- List of elements -->
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Track Your Donation
+          <div class="additional-content">
+            <span>Donation tracking is currently unavailable for this Campaign </span> 
+            <span style="font-weight: bold; margin: 30px 20px;">Donation Tracking:</span>
+            <span>"Track Your Donation" feature utilizes blockchain technology to provide donors with real-time updates on the progress and impact of their contributions to a specific campaign or cause. This integration with blockchain enhances transparency and ensures a secure and immutable record of donation transactions. </span>
+
+          </div>
+        </div>
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Pledge
+          <div class="additional-content">
+        <span>Pledges are currently unavailable for this campaign</span>
+        <span style="font-weight: bold;">Pledge:</span>
+        <span>a pledge feature allows individuals to commit to donating a specific amount to a campaign. Organizers create tiers with associated donation amounts and rewards. Users choose a tier, expressing their intent to contribute if the campaign meets its funding goal. Pledges become actual donations once the goal is achieved, providing a way for backers to support and engage with the project.</span>
+            
+   
+        
+
+        <!-- Add more pledge items as needed -->
+    </div>
+          </div>
+          <div class="scrollable-list-item" onclick="toggleContent(this)"><a href="#" style="text-decoration: none; list-style: none;">Campaign Status </a>
+            <div class="additional-content"><a href="#"></a></div>
+        </div>
+        <div class="scrollable-list-item" onclick="toggleContent(this)">Smart Contract 
+            <div class="additional-content">This feature is unavailable</div>
+        </div>
+    </div>
+        <!-- Add more items as needed -->
+    </div>
+</div>
+
+</div> 
+</div>
+
+
+<div class="section2">
+   <div class> 
+    <button class="btn2" style="margin-left: 116px;">Support Now</button>
+    <button class="btn2">How CrowdFunding Works</button>
+</div>
+
+    <div class="tags">
+        <h2>Tags For this Campaign</h2>
+        <ul>
+            <li><span>#Charity</span></li>
+            <li><span>#WildLife</span></li>
+            <li><span>#Fundraiser</span></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="footer">
+    <ul class="ful1">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Campaigns</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+    
+    <ul class="ful1">
+      <li><a href="#"> What we do ?</a></li>
+      <li><a href="#"> Doesnt Use cryptocurrency</a></li>
+      <li><a href="#"> Crowdfunding </a></li>
+    </ul>
+    
+    </div>
+    <hr>
+    <footer>
+      <ul class="social-icons">
+        <li><a href="https://facebook.com" target="_blank"><img src="images/5296499_fb_facebook_facebook logo_icon.png" alt="Facebook"></a></li>
+        <li><a href="https://twitter.com" target="_blank"><img src="images/11053970_x_logo_twitter_new_brand_icon.png" alt="Twitter"></a></li>
+        <li><a href="https://instagram.com" target="_blank"><img src="images/5296765_camera_instagram_instagram logo_icon.png" alt="Instagram"></a></li>
+        <li><a href="https://www.linkedin.com/in/antriksh-gwal-42aab928a" target="_blank"><img src="images/5296501_linkedin_network_linkedin logo_icon.png" alt="linkedin"></a></li>
+      </ul>
+      <p>&copy; 2024 CryptoFund. All rights reserved.</p>
+    </footer>
+</div>
+
+    <script>
+        
+        function toggleContent(element) {
+      var content = element.querySelector('.additional-content');
+      var listItem = element;
+
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        listItem.style.maxHeight = listItem.scrollHeight + 'px';
+      } else {
+        content.style.display = 'none';
+        listItem.style.maxHeight = null;
+      }
+    }
+     // JavaScript function to toggle additional content and adjust container height
+     function toggleContent(element) {
+      var content = element.querySelector('.additional-content');
+      var mainBox = document.getElementById('mainBox');
+
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        mainBox.style.height = mainBox.scrollHeight + 'px';
+      } else {
+        content.style.display = 'none';
+        mainBox.style.height = mainBox.scrollHeight - element.scrollHeight + 'px';
+      }
+    }
+    let moreact = [...document.querySelectorAll('.moreaction')];
+    let navbar = [...document.querySelectorAll('.navbar')]; 
+
+
+
+    
+
+
+    </script>
+    <script src="javascript.js"></script>
+</body>
+</html>
